@@ -10,7 +10,7 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
+# dist/ # remove from gitignore to be run easely on other machine
 downloads/
 eggs/
 .eggs/
