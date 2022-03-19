@@ -5,15 +5,13 @@ import os, sys; sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath
 from colorama import Fore, Style
 from tabulate import tabulate
 
-from elements.video import Video
-from elements.channel import Channel
 from cli import utils
 
 class Printer:
     def __init__(self):
         self.CMD_COLOR = Fore.MAGENTA
-        self.CMD_STYLE_1 = Fore.CYAN
-        self.CMD_STYLE_2 = Fore.BLUE
+        self.CMD_STYLE_1 = Fore.LIGHTGREEN_EX
+        self.CMD_STYLE_2 = Fore.GREEN
         self.CMD_WARNING = Fore.YELLOW
         self.CMD_ERROR = Fore.RED
         self.CMD_STANDARD = Fore.WHITE
@@ -22,7 +20,7 @@ class Printer:
     def print_title(self):
         print(f"{self.CMD_STYLE_2}+{self.CMD_STYLE_1}---------------------------{self.CMD_STYLE_2}+")
         print(f"{self.CMD_STYLE_1}|                           |")
-        print(f"{self.CMD_STYLE_1}|{Fore.WHITE}      TV-Replay Client     {self.CMD_STYLE_1}|")
+        print(f"{self.CMD_STYLE_1}|{Fore.WHITE}       Projet-creator      {self.CMD_STYLE_1}|")
         print(f"{self.CMD_STYLE_1}|                           |")
         print(f"{self.CMD_STYLE_2}+{self.CMD_STYLE_1}---------------------------{self.CMD_STYLE_2}+{Style.RESET_ALL}")
 
@@ -135,10 +133,7 @@ class Printer:
 
 if __name__ == "__main__":
     printer = Printer()
+    printer.print_title()
     printer.print_help()
     printer.print_warning("presque mince...")
     printer.print_error("oh mince la catastrophe")
-    test_video = Video("une url", "un titre", "un subtitle", "une description", "une durée", "une date", "un thumbnail")
-    print(vars(test_video))
-    printer.print_table_node(test_video)
-    print(type(test_video).__name__)

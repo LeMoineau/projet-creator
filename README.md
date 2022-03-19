@@ -31,3 +31,4 @@ To change/add task for all of the project currently created, you can run the fol
 
 library need to run the projet
 - os
+- colorama

@@ -1,0 +1,29 @@
+project-structure:
+  - .projet-creator:
+    - project.yml
+  - specification:
+    - README.md
+    - user-stories.md
+    - coding-convention.md
+    - documentation-convention.md
+    - maquettes:
+      - README.md
+  - realisation:
+    - tests:
+      - README.md
+    - README.md
+
+options:
+  separate-git-and-spe: true
+  use-default-documentation-convention: true
+  use-default-coding-convention: true
+
+global-tasks:
+  - task-name: create git repository
+    status: false
+    checking-method:
+      - file-exist: .git
+  - task-name: write coding conventions
+    status: false
+    checking-method:
+      - file-not-empty: specification/coding-convention.md
